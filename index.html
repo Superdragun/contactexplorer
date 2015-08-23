@@ -68,11 +68,13 @@ var authenticateUser = function(successHandler, errorHandler) {
     cordova.require("com.salesforce.util.logger").logToConsole("authenticateUser");
     // Get salesforce mobile sdk OAuth plugin
     var oauthPlugin = cordova.require("com.salesforce.plugin.oauth");
-
+    cordova.require("com.salesforce.util.logger").logToConsole("authenticateUser2");
     // Call getAuthCredentials to get the initial session credentials
     oauthPlugin.getAuthCredentials(
         // Callback method when authentication succeeds.
+        
         function (creds) {
+            cordova.require("com.salesforce.util.logger").logToConsole("authenticateUser3");
             // Create forcetk client instance for rest API calls
             forceClient = new forcetk.Client(creds.clientId, creds.loginUrl);
             forceClient.setSessionToken(creds.accessToken, "v31.0", creds.instanceUrl);
@@ -87,6 +89,7 @@ cordova.require("com.salesforce.util.logger").logToConsole("Set Forcetk");
             alert('Failed to authenticate user: ' + error);
         }
     );
+cordova.require("com.salesforce.util.logger").logToConsole("authenticateUser4");    
 }
 
 
