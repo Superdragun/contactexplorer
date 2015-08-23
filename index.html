@@ -56,11 +56,12 @@
   //   });
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 document.addEventListener("deviceready", function() {
+    cordova.require("com.salesforce.util.logger").logToConsole("onDeviceReady ");
     authenticateUser(onSuccessTest);
 }, false);
 
 var authenticateUser = function(successHandler, errorHandler) {
-
+    cordova.require("com.salesforce.util.logger").logToConsole("authenticateUser");
     // Get salesforce mobile sdk OAuth plugin
     var oauthPlugin = cordova.require("com.salesforce.plugin.oauth");
 
@@ -72,7 +73,7 @@ var authenticateUser = function(successHandler, errorHandler) {
             forceClient = new forcetk.Client(creds.clientId, creds.loginUrl);
             forceClient.setSessionToken(creds.accessToken, "v31.0", creds.instanceUrl);
             forceClient.setRefreshToken(creds.refreshToken);
-
+cordova.require("com.salesforce.util.logger").logToConsole("Set Forcetk");
             // Call success handler and handover the forcetkClient
             successHandler(forceClient);
 
