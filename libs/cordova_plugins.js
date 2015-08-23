@@ -34,7 +34,7 @@ module.exports = [
     {
         "file": "com.salesforce/com.salesforce.util.logger.js",
         "id": "com.salesforce.util.logger"
-    }
+    },
     {
         "file": "org.apache.cordova.contacts/contacts.js",
         "id": "org.apache.cordova.contacts.contacts",
