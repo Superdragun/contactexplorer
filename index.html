@@ -53,12 +53,16 @@
         //Add event listeners and so forth here
 		// document.addEventListener("deviceready", onDeviceReady,false);
 
-  //   });
+  //   
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 document.addEventListener("deviceready", function() {
     cordova.require("com.salesforce.util.logger").logToConsole("onDeviceReady ");
     authenticateUser(onSuccessTest);
-}, false);
+    //onSuccessTest();   
+},
+ false);
+
+});
 
 var authenticateUser = function(successHandler, errorHandler) {
     cordova.require("com.salesforce.util.logger").logToConsole("authenticateUser");
