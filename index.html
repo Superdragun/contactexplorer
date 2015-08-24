@@ -72,7 +72,6 @@ var authenticateUser = function(successHandler, errorHandler) {
     // Call getAuthCredentials to get the initial session credentials
     oauthPlugin.getAuthCredentials(
         // Callback method when authentication succeeds.
-        
         function (creds) {
             cordova.require("com.salesforce.util.logger").logToConsole("authenticateUser3");
             // Create forcetk client instance for rest API calls
@@ -86,6 +85,7 @@ cordova.require("com.salesforce.util.logger").logToConsole("Set Forcetk");
 
         },
         function (error) {
+            cordova.require("com.salesforce.util.logger").logToConsole("Failed");
             alert('Failed to authenticate user: ' + error);
         }
     );
