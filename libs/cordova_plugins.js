@@ -6,7 +6,7 @@ module.exports = [
     },
     {
         "file": "com.salesforce/com.salesforce.plugin.sfaccountmanager.js",
-        "id": "com.salesforce.plugin.sfacccountmanager"
+        "id": "com.salesforce.plugin.sfaccountmanager"
     },
     {
         "file": "com.salesforce/com.salesforce.plugin.sdkinfo.js",
